@@ -13,7 +13,11 @@
     "type": "git",
     "url": "https://github.com/crackkhe/Latinmovies"
   },
-  "keywords": ["stremio", "stremio-addons", "addons"],
+  "keywords": [
+    "stremio",
+    "stremio-addons",
+    "addons"
+  ],
   "author": "Tu Nombre",
   "license": "MIT",
   "bugs": {
