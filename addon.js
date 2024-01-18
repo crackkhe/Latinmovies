@@ -1,5 +1,7 @@
 const { addonBuilder } = require("stremio-addon-sdk");
 const magnet = require("magnet-uri");
+const cors = require('cors');  // Agrega esta línea para importar el módulo CORS
+
 
 const manifest = { 
     "id": "latinomovies",
@@ -79,6 +81,12 @@ function fromMagnet(name, type, uri) {
 
 const builder = new addonBuilder(manifest);
 
+// Usa el middleware cors para permitir solicitudes desde cualquier origen
+builder.use(cors());
+
+// ... Resto del código ...
+
+
 // Streams handler
 builder.defineStreamHandler(function(args) {
     if (dataset[args.id]) {
@@ -114,11 +122,4 @@ builder.defineCatalogHandler(function(args, cb) {
 
 module.exports = builder.getInterface()
 
-// ...INSTALLATION CORS
-
-const cors = require('cors');
-// ...
-const builder = new addonBuilder(manifest);
-builder.use(cors());
-// ...
 
