@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "Latin movies",
   "version": "3.0.0",
   "description": "Explora un universo de emocionantes películas en español con nuestro complemento Stremio.",
+=======
+  "name": "latinmovies-addon",
+  "version": "1.0.0",
+  "description": "Stremio Add-on for Latinmovies",
+>>>>>>> parent of 18a693f (update TT)
   "main": "server.js",
   "scripts": {
     "test": "node test/*",
