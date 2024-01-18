@@ -1,7 +1,7 @@
 {
-  "name": "latinmovies-addon",
-  "version": "1.0.0",
-  "description": "Stremio Add-on for Latinmovies",
+  "name": "Latin movies",
+  "version": "2.0.0",
+  "description": "Explora un universo de emocionantes películas en español con nuestro complemento Stremio.",
   "main": "server.js",
   "scripts": {
     "test": "node test/*",

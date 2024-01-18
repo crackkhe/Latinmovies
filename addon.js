@@ -3,10 +3,10 @@ const magnet = require("magnet-uri");
 
 const manifest = { 
     "id": "org.stremio.helloworld",
-    "version": "1.0.0",
+    "version": "2.0.0",
 
-    "name": "Hello World Addon",
-    "description": "Sample addon providing a few public domain movies",
+    "name": "Latin movies",
+    "description": "Explora un universo de emocionantes películas en español con nuestro complemento Stremio. Desde éxitos de taquilla hasta joyas cinematográficas ocultas, disfruta de una amplia variedad de géneros. Nuestra colección en constante crecimiento ofrece streaming de alta calidad y opciones para todos los gustos. Descubre el cine en español desde la comodidad de tu pantalla. ¡Instala nuestro addon y sumérgete en un mundo de entretenimiento sin límites! 🎬🍿",
 
     "resources": [
         "catalog",
@@ -41,12 +41,12 @@ const dataset = {
     "tt1748166:1:1": { name: "Pioneer One", type: "series", infoHash: "07a9de9750158471c3302e4e95edb1107f980fa6" },
     
     // Se añaden seis nuevas opciones con URLs externas
-    "tt1234567": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
-    "tt2345678": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/Wet__Bunny" },
-    "tt3456789": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/KateJonson" },
-    "tt4567890": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/dreams4u" },
-    "tt5678901": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
-    "tt6789012": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/Wet__Bunny" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/KateJonson" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/dreams4u" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com" },
 };
 
 function fromMagnet(name, type, uri) {
