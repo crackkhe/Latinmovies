@@ -1,19 +1,11 @@
 {
-<<<<<<< HEAD
-  "name": "Latin movies",
-  "version": "3.0.0",
+  "name": "Latinmovies",
+  "version": "2.0.0",
   "description": "Explora un universo de emocionantes películas en español con nuestro complemento Stremio.",
-=======
-  "name": "latinmovies-addon",
-  "version": "1.0.0",
-  "description": "Stremio Add-on for Latinmovies",
->>>>>>> parent of 18a693f (update TT)
   "main": "server.js",
   "scripts": {
     "test": "node test/*",
-    "start": "node server.js",
-    "vercel-build": "npm install",
-    "vercel-start": "node serverless.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +16,7 @@
     "stremio-addons",
     "addons"
   ],
-  "author": "Tu Nombre",
+  "author": "Your Name",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/crackkhe/Latinmovies/issues"
@@ -34,7 +26,9 @@
     "cors": "^2.8.5",
     "magnet-uri": "^5.4.0",
     "stremio-addon-sdk": "^1.6.10"
-  },
+  }
+}
+
   "engines": {
     "node": "18.x"
   }
