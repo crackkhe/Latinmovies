@@ -113,3 +113,12 @@ builder.defineCatalogHandler(function(args, cb) {
 })
 
 module.exports = builder.getInterface()
+
+// ...INSTALLATION CORS
+
+const cors = require('cors');
+// ...
+const builder = new addonBuilder(manifest);
+builder.use(cors());
+// ...
+
