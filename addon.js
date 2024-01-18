@@ -3,19 +3,39 @@ const magnet = require("magnet-uri");
 
 const manifest = { 
     "id": "org.stremio.helloworld",
+<<<<<<< HEAD
     "version": "3.0.0",
+=======
+    "version": "2.0.0",
+
+>>>>>>> parent of fa70785 (Opciones stream)
     "name": "Latin movies",
     "description": "Explora un universo de emocionantes películas en español con nuestro complemento Stremio. Desde éxitos de taquilla hasta joyas cinematográficas ocultas, disfruta de una amplia variedad de géneros. Nuestra colección en constante crecimiento ofrece streaming de alta calidad y opciones para todos los gustos. Descubre el cine en español desde la comodidad de tu pantalla. ¡Instala nuestro addon y sumérgete en un mundo de entretenimiento sin límites! 🎬🍿",
-    "resources": ["catalog", "stream"],
-    "types": ["movie", "series"],
-    "catalogs": [
-        { type: 'movie', id: 'helloworldmovies' },
-        { type: 'series', id: 'helloworldseries' }
+
+    "resources": [
+        "catalog",
+        "stream"
     ],
-    "idPrefixes": ["tt"]
+
+    "types": ["movie", "series"],
+    
+    "catalogs": [
+        {
+            type: 'movie',
+            id: 'helloworldmovies'
+        },
+        {
+            type: 'series',
+            id: 'helloworldseries'
+        }
+    ],
+
+    "idPrefixes": [ "tt" ]
+
 };
 
 const dataset = {
+<<<<<<< HEAD
     "tt0281358": {
         name: "A Walk To Remember",
         type: "movie",
@@ -54,15 +74,47 @@ const dataset = {
         ],
     },
     // Otras películas...
+=======
+    "tt0032138": { name: "The Wizard of Oz", type: "movie", infoHash: "24c8802e2624e17d46cd555f364debd949f2c81e", fileIdx: 0 },
+    "tt0017136": { name: "Metropolis", type: "movie", infoHash: "dca926c0328bb54d209d82dc8a2f391617b47d7a", fileIdx: 1 },
+    "tt0063350": fromMagnet("Night of the Living Dead", "movie", "magnet:?xt=urn:btih:A7CFBB7840A8B67FD735AC73A373302D14A7CDC9&dn=night+of+the+living+dead+1968+remastered+bdrip+1080p+ita+eng+x265+nahom&tr=udp%3A%2F%2Ftracker.publicbt.com%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce"),
+    "tt0051744": { name: "House on Haunted Hill", type: "movie", infoHash: "9f86563ce2ed86bbfedd5d3e9f4e55aedd660960" },
+    "tt1254207": { name: "Big Buck Bunny", type: "movie", url: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" },
+    "tt0031051": { name: "The Arizona Kid", type: "movie", ytId: "m3BKVSpP80s" },
+    "tt0137523": { name: "Fight Club", type: "movie", externalUrl: "https://www.netflix.com/watch/26004747" },
+    "tt1748166:1:1": { name: "Pioneer One", type: "series", infoHash: "07a9de9750158471c3302e4e95edb1107f980fa6" },
+    
+    // Se añaden seis nuevas opciones con URLs externas
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/Wet__Bunny" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/KateJonson" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/dreams4u" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com/CrazyTori" },
+    "tt0281358": { name: "A Walk To Remember", type: "movie", externalUrl: "https://es.stripchat.com" },
+>>>>>>> parent of fa70785 (Opciones stream)
 };
+
+function fromMagnet(name, type, uri) {
+    const parsed = magnet.decode(uri);
+    const infoHash = parsed.infoHash.toLowerCase();
+    const tags = [];
+    if (uri.match(/720p/i)) tags.push("720p");
+    if (uri.match(/1080p/i)) tags.push("1080p");
+    return {
+        name: name,
+        type: type,
+        infoHash: infoHash,
+        sources: (parsed.announce || []).map(function(x) { return "tracker:"+x }).concat(["dht:"+infoHash]),
+        tag: tags,
+        title: tags[0],
+    }
+}
 
 const builder = new addonBuilder(manifest);
 
 builder.defineStreamHandler(function(args) {
-    const movie = dataset[args.id];
-
-    if (movie && movie.options) {
-        return Promise.resolve({ streams: movie.options });
+    if (dataset[args.id]) {
+        return Promise.resolve({ streams: [dataset[args.id]] });
     } else {
         return Promise.resolve({ streams: [] });
     }
@@ -76,7 +128,7 @@ const generateMetaPreview = function(value, key) {
         id: imdbId,
         type: value.type,
         name: value.name,
-        poster: METAHUB_URL + "/poster/medium/" + imdbId + "/img",
+        poster: METAHUB_URL+"/poster/medium/"+imdbId+"/img",
     };
 };
 
@@ -89,4 +141,3 @@ builder.defineCatalogHandler(function(args, cb) {
 });
 
 module.exports = builder.getInterface();
-
