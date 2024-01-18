@@ -27,7 +27,7 @@
     "magnet-uri": "^5.4.0",
     "stremio-addon-sdk": "^1.6.10"
   }
-}
+},
 
   "engines": {
     "node": "18.x"
