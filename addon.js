@@ -23,7 +23,7 @@ const dataset = {
             {
                 id: "tt0281358:stream1",
                 source: "url",
-                url: "https://es.stripchat.com/CrazyTori",
+                Externalurl: "https://es.stripchat.com/CrazyTori",
             },
             {
                 id: "tt0281358:stream2",
@@ -36,17 +36,17 @@ const dataset = {
                 url: "https://es.stripchat.com/KateJonson",
             },
             {
-                id: "tt0281358:stream3",
+                id: "tt0281358:stream4",
                 source: "url",
                 url: "https://es.stripchat.com/dreams4u",
             },
             {
-                id: "tt0281358:stream3",
+                id: "tt0281358:stream5",
                 source: "url",
                 url: "https://es.stripchat.com/CrazyTori",
             },
             {
-                id: "tt0281358:stream3",
+                id: "tt0281358:stream6",
                 source: "url",
                 url: "https://es.stripchat.com",
             },
